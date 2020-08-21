@@ -1,12 +1,21 @@
-# Binaries
+#           Binaries
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 bin
 bin-int
 
-# GeneratWorkspaces
+#           GeneratWorkspaces
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
 # Xcode
 *.xcworkspace
 *.xcodeproj
+
+# Visual Studio
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+.vs
 
 # Makefile
 Makefile

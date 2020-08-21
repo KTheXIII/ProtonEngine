@@ -18,6 +18,7 @@ project "RenderEngine"
   location "RenderEngine"
   kind "ConsoleApp"
   language "C++"
+  staticruntime "on"
 
   targetdir("bin/" ..outdir.. "/%{prj.name}")
   objdir("bin-int/" ..outdir.. "/%{prj.name}")
@@ -37,7 +38,7 @@ project "RenderEngine"
 
   filter "system:macosx"
     systemversion "latest"
-    staticruntime "On"
+    system "macosx"
 
     defines {
       "GL_SILENCE_DEPRECATION"
@@ -48,6 +49,14 @@ project "RenderEngine"
       "IOKit.framework",
       "CoreVideo.framework",
       "OpenGL.framework"
+    }
+
+  filter "system:Windows"
+    system "Windows"
+    systemversion "latest"
+
+    links {
+      "OpenGL32.lib",
     }
 
   filter "configurations:Debug"
