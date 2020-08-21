@@ -50,6 +50,19 @@ project "RenderEngine"
       "CoreVideo.framework",
       "OpenGL.framework"
     }
+  
+  filter "system:linux"
+    system "linux"
+    systemversion "latest"
+    staticruntime "On"
+
+    links {
+      "pthread",
+      "dl",
+      "m",
+      "GL",
+      "X11"
+    }
 
   filter "system:Windows"
     system "Windows"

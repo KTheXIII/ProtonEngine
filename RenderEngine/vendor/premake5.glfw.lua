@@ -52,6 +52,38 @@ project "GLFW"
       "_GLFW_COCOA",
     }
   
+  filter "system:linux"
+    pic "On"
+    system "linux"
+    systemversion "latest"
+    staticruntime "On"
+
+    files {
+      "GLFW/src/x11_platform.h",
+      "GLFW/src/xkb_unicode.h",
+      "GLFW/src/posix_time.h",
+      "GLFW/src/posix_thread.h",
+      "GLFW/src/glx_context.h",
+      "GLFW/src/egl_context.h",
+      "GLFW/src/osmesa_context.h",
+      "GLFW/src/linux_joystick.h",
+
+      "GLFW/src/linux_joystick.c",
+      "GLFW/src/x11_init.c",
+      "GLFW/src/x11_monitor.c",
+      "GLFW/src/x11_window.c",
+      "GLFW/src/xkb_unicode.c",
+      "GLFW/src/posix_time.c",
+      "GLFW/src/posix_thread.c",
+      "GLFW/src/glx_context.c",
+      "GLFW/src/egl_context.c",
+      "GLFW/src/osmesa_context.c",
+    }
+
+    defines {
+      "_GLFW_X11"
+    }
+
   filter "system:windows"
     systemversion "latest"
     staticruntime "On"

@@ -1,9 +1,9 @@
 #           Binaries
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
-bin
-bin-int
+**/bin
+**/bin-int
 
-#           GeneratWorkspaces
+#           Generated Workspaces
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
 # Xcode
@@ -19,3 +19,6 @@ bin-int
 
 # Makefile
 Makefile
+
+# Visual Studio Code
+.vscode
