@@ -1,0 +1,12 @@
+# Binaries
+bin
+bin-int
+
+# GeneratWorkspaces
+
+# Xcode
+*.xcworkspace
+*.xcodeproj
+
+# Makefile
+Makefile
