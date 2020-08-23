@@ -12,9 +12,11 @@ outdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 indirs = {}
 indirs["GLFW"] = "Proton/vendor/GLFW/include/"
 indirs["Glad"] = "Proton/vendor/Glad/include"
+indirs["ImGui"] = "Proton/vendor/ImGui"
 
 include "Proton/vendor/premake5.glfw.lua"
 include "Proton/vendor/Glad"
+include "Proton/vendor/premake5.imgui.lua"
 
 project "Proton"
   location "Proton"
@@ -32,12 +34,14 @@ project "Proton"
 
   includedirs {
 		"%{indirs.GLFW}",
-		"%{indirs.Glad}"
+		"%{indirs.Glad}",
+		"%{indirs.ImGui}"
   }
 
   links { 
     "GLFW",
-    "Glad"
+    "Glad",
+    "ImGui"
   }
 
   filter "system:macosx"

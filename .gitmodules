@@ -1,3 +1,6 @@
 [submodule "Proton/vendor/GLFW"]
 	path = Proton/vendor/GLFW
 	url = https://github.com/glfw/glfw.git
+[submodule "Proton/vendor/ImGui"]
+	path = Proton/vendor/ImGui
+	url = https://github.com/ocornut/imgui.git
