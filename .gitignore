@@ -19,6 +19,7 @@
 
 # Makefile
 Makefile
+*.make
 
 # Visual Studio Code
 .vscode

@@ -3,7 +3,7 @@
 ## Clone repo
 
 ```
-git clone --recursive https://github.com/KTheXIII/render-engine.git
+git clone --recursive https://github.com/KTheXIII/ProtonEngine.git
 ```
 
 - [RenderEngine](#renderengine)
