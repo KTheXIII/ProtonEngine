@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "glad/glad.h"
 #include "GLFW/glfw3.h"
 
 int main(int argc, char const* argv[]) {
@@ -13,12 +14,17 @@ int main(int argc, char const* argv[]) {
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     window = glfwCreateWindow(960, 540, "Render Engine!", NULL, NULL);
+    glfwMakeContextCurrent(window);
+    
     if (!window) {
         glfwTerminate();
         return -1;
     }
-
-    glfwMakeContextCurrent(window);
+    
+    if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+        std::cout << "Failed to initialize GLAD" << std::endl;
+        return -1;
+    }
 
     while (!glfwWindowShouldClose(window)) {
         /* Render here */

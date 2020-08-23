@@ -11,8 +11,10 @@ outdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 indirs = {}
 indirs["GLFW"] = "RenderEngine/vendor/GLFW/include/"
+indirs["Glad"] = "RenderEngine/vendor/Glad/include"
 
 include "RenderEngine/vendor/premake5.glfw.lua"
+include "RenderEngine/vendor/Glad"
 
 project "RenderEngine"
   location "RenderEngine"
@@ -29,11 +31,13 @@ project "RenderEngine"
   }
 
   includedirs {
-		"%{indirs.GLFW}"
+		"%{indirs.GLFW}",
+		"%{indirs.Glad}"
   }
 
   links { 
     "GLFW",
+    "Glad"
   }
 
   filter "system:macosx"
