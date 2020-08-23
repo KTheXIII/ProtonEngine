@@ -1,4 +1,4 @@
-workspace "RenderEngine"
+workspace "Proton"
   architecture "x64"
 
   configurations {
@@ -10,12 +10,16 @@ workspace "RenderEngine"
 outdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 indirs = {}
-indirs["GLFW"] = "RenderEngine/vendor/GLFW/include/"
+indirs["GLFW"] = "Proton/vendor/GLFW/include/"
+indirs["Glad"] = "Proton/vendor/Glad/include"
+indirs["ImGui"] = "Proton/vendor/ImGui"
 
-include "RenderEngine/vendor/premake5.glfw.lua"
+include "Proton/vendor/premake5.glfw.lua"
+include "Proton/vendor/Glad"
+include "Proton/vendor/premake5.imgui.lua"
 
-project "RenderEngine"
-  location "RenderEngine"
+project "Proton"
+  location "Proton"
   kind "ConsoleApp"
   language "C++"
   staticruntime "on"
@@ -29,11 +33,15 @@ project "RenderEngine"
   }
 
   includedirs {
-		"%{indirs.GLFW}"
+		"%{indirs.GLFW}",
+		"%{indirs.Glad}",
+		"%{indirs.ImGui}"
   }
 
   links { 
     "GLFW",
+    "Glad",
+    "ImGui"
   }
 
   filter "system:macosx"
