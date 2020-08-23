@@ -1,3 +1,3 @@
-[submodule "RenderEngine/vendor/GLFW"]
-	path = RenderEngine/vendor/GLFW
+[submodule "Proton/vendor/GLFW"]
+	path = Proton/vendor/GLFW
 	url = https://github.com/glfw/glfw.git

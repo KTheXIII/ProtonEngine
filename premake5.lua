@@ -1,4 +1,4 @@
-workspace "RenderEngine"
+workspace "Proton"
   architecture "x64"
 
   configurations {
@@ -10,14 +10,14 @@ workspace "RenderEngine"
 outdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 indirs = {}
-indirs["GLFW"] = "RenderEngine/vendor/GLFW/include/"
-indirs["Glad"] = "RenderEngine/vendor/Glad/include"
+indirs["GLFW"] = "Proton/vendor/GLFW/include/"
+indirs["Glad"] = "Proton/vendor/Glad/include"
 
-include "RenderEngine/vendor/premake5.glfw.lua"
-include "RenderEngine/vendor/Glad"
+include "Proton/vendor/premake5.glfw.lua"
+include "Proton/vendor/Glad"
 
-project "RenderEngine"
-  location "RenderEngine"
+project "Proton"
+  location "Proton"
   kind "ConsoleApp"
   language "C++"
   staticruntime "on"
